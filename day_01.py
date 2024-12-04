@@ -13,6 +13,14 @@ def get_distance(listA, listB):
 
     return total_distance
 
+def get_similarity(listA, listB):
+    similarity = 0
+
+    for num in listB:
+        similarity += num * listA.count(num)
+
+    return similarity
+
 def main():
     listA = []
     listB = []
@@ -23,7 +31,8 @@ def main():
         listA.append(int(line[0]))
         listB.append(int(line[1]))
 
-    print(get_distance(listA, listB))
+    print("star 01: ", get_distance(listA, listB))
+    print("star 02: ", get_similarity(listA, listB))
     return 0
 
 if __name__ == "__main__":
